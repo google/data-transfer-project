@@ -37,7 +37,7 @@ dependencies {
     
 
     // https://mvnrepository.com/artifact/org.apache.jena/jena-core
-    compile group: 'org.apache.jena', name: 'jena-core', version: '3.9.0'
+    compile group: 'org.apache.jena', name: 'jena-core', version: '4.2.0'
 }
 
 configurePublication(project)
