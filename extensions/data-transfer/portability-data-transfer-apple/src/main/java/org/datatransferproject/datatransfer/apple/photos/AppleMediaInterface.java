@@ -49,7 +49,6 @@ import org.apache.commons.io.IOUtils;
 import org.datatransferproject.api.launcher.Monitor;
 import org.datatransferproject.datatransfer.apple.AppleBaseInterface;
 import org.datatransferproject.datatransfer.apple.constants.ApplePhotosConstants;
-import org.datatransferproject.datatransfer.apple.constants.AuditKeys;
 import org.datatransferproject.datatransfer.apple.constants.Headers;
 import org.datatransferproject.datatransfer.apple.exceptions.AppleContentException;
 import org.datatransferproject.datatransfer.apple.photos.photosproto.PhotosProtocol;

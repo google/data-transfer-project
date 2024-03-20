@@ -27,6 +27,7 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import java.io.IOException;
+import com.google.api.services.people.v1.PeopleService;
 import org.datatransferproject.api.launcher.Monitor;
 import org.datatransferproject.spi.transfer.types.InvalidTokenException;
 import org.datatransferproject.types.transfer.auth.AppCredentials;
@@ -118,4 +119,12 @@ public class GoogleCredentialFactory {
       }
     }
   }
+  public  PeopleService createPeopleService(TokensAndUrlAuthData authData) {
+    Credential credential = createCredential(authData);
+    return new PeopleService.Builder(
+            getHttpTransport(), getJsonFactory(), credential)
+            .setApplicationName(GoogleStaticObjects.APP_NAME)
+            .build();
+  }
+
 }

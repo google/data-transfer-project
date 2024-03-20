@@ -52,7 +52,7 @@ public class RememberTheMilkAuthDataGenerator implements AuthDataGenerator {
   private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
   private static final String GET_TOKEN_URL = "https://api.rememberthemilk.com/services/rest/";
   private static final String GET_TOKEN_METHOD = "rtm.auth.getToken";
-
+  private static final int SUCCESS=200;
   private final RememberTheMilkSignatureGenerator signatureGenerator;
   private final String perms;
   private final Monitor monitor;
@@ -103,7 +103,7 @@ public class RememberTheMilkAuthDataGenerator implements AuthDataGenerator {
     HttpRequest getRequest = requestFactory.buildGetRequest(new GenericUrl(signedUrl));
     HttpResponse response = getRequest.execute();
     int statusCode = response.getStatusCode();
-    if (statusCode != 200) {
+    if (statusCode != SUCCESS) {
       throw new IOException(
           "Bad status code: " + statusCode + " error: " + response.getStatusMessage());
     }

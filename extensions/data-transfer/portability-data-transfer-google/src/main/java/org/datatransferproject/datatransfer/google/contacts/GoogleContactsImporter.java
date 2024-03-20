@@ -228,10 +228,6 @@ public class GoogleContactsImporter implements Importer<TokensAndUrlAuthData, Co
   }
 
   private synchronized PeopleService makePeopleService(TokensAndUrlAuthData authData) {
-    Credential credential = credentialFactory.createCredential(authData);
-    return new PeopleService.Builder(
-            credentialFactory.getHttpTransport(), credentialFactory.getJsonFactory(), credential)
-        .setApplicationName(GoogleStaticObjects.APP_NAME)
-        .build();
+    return credentialFactory.createPeopleService(authData);
   }
 }
