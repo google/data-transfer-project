@@ -28,7 +28,7 @@ dependencies {
 
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
 
-    compile('org.eclipse.jetty:jetty-webapp:9.4.8.v20171121') {
+    compile('org.eclipse.jetty:jetty-webapp:9.4.43.v20210629') {
         exclude module: 'jetty-xml'
     }
 
@@ -37,7 +37,7 @@ dependencies {
 
     compile "org.glassfish.jersey.core:jersey-common:${jerseyVersion}"
     compile "org.glassfish.jersey.inject:jersey-hk2:${jerseyVersion}"
-    
+
     compile "org.glassfish.jersey.containers:jersey-container-servlet:${jerseyVersion}"
 
 }

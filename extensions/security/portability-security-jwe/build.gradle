@@ -20,7 +20,7 @@ plugins {
 
 dependencies {
     compile project(':portability-spi-transfer')
-    compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '5.14'
+    compile group: 'com.nimbusds', name: 'nimbus-jose-jwt', version: '9.21.1'
 }
 
 configurePublication(project)

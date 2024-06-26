@@ -23,21 +23,21 @@ plugins {
 dependencies {
     compile project(':portability-spi-cloud')
     compile project(':portability-spi-transfer')
-    
+
     compile("com.google.api-client:google-api-client:${googleApiClient}")
 
     compile 'com.google.re2j:re2j:1.2'
 
     compile("com.googlecode.ez-vcard:ez-vcard:${ezVcardVersion}")
 
-    compile("com.google.oauth-client:google-oauth-client:${googleApiClient}")
+    compile("com.google.oauth-client:google-oauth-client:1.34.1")
     compile("com.google.http-client:google-http-client-jackson2:${googleHttpClientVersion}")
     // https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty
     compile group: 'com.google.oauth-client', name: 'google-oauth-client-jetty', version: '1.22.0'
-    
+
 
     // https://mvnrepository.com/artifact/org.apache.jena/jena-core
-    compile group: 'org.apache.jena', name: 'jena-core', version: '3.9.0'
+    compile group: 'org.apache.jena', name: 'jena-core', version: '4.2.0'
 }
 
 configurePublication(project)
