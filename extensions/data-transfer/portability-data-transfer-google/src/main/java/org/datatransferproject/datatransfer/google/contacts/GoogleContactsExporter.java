@@ -116,8 +116,7 @@ public class GoogleContactsExporter
     LinkedList<StructuredName> alternateStructuredNames = new LinkedList<>();
     for (Name personName : personNames) {
       StructuredName structuredName = convertToVCardNameSingle(personName);
-      Boolean isNamePrimary = personName.getMetadata().getPrimary();
-      if (primaryStructuredName == null && isNamePrimary != null && isNamePrimary) {
+      if (isPrimaryName(personName,primaryStructuredName)) {
         // This is the (a?) primary name for the Person, so it should be the primary name in the
         // VCard.
         primaryStructuredName = structuredName;
@@ -133,6 +132,11 @@ public class GoogleContactsExporter
     vCard.addProperty(primaryStructuredName);
     vCard.addPropertyAlt(StructuredName.class, alternateStructuredNames);
   }
+  private static boolean isPrimaryName(Name personName,StructuredName primaryStructuredName){
+    Boolean isNamePrimary = personName.getMetadata().getPrimary();
+    return primaryStructuredName == null && isNamePrimary != null && isNamePrimary;
+  }
+
 
   private static StructuredName convertToVCardNameSingle(Name personName) {
     StructuredName structuredName = new StructuredName();
