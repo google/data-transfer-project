@@ -28,7 +28,7 @@ dependencies {
 
     compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
 
-    compile('org.eclipse.jetty:jetty-webapp:9.4.8.v20171121') {
+    compile('org.eclipse.jetty:jetty-webapp:9.4.35.v20201120') {
         exclude module: 'jetty-xml'
     }
 
